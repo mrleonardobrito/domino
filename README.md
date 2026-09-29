@@ -24,6 +24,16 @@ npm run build
 npm run check:runtime
 ```
 
+## Deploy na Vercel
+O arquivo `vercel.json` configura o deploy como site estático:
+
+- Instalação com `npm ci` e build com `npm run build` (que também roda `check:runtime`).
+- Saída publicada a partir de `dist/client`.
+- Rotas desconhecidas fazem fallback para `index.html`.
+- JS, CSS e fontes com hash em `/assets/` recebem cache imutável.
+
+Importe o repositório na Vercel (Node.js 22.x ou superior) ou rode `npx vercel` na raiz do projeto.
+
 ## Escopo
 Frontend React/TypeScript e Vite. Os dados existem apenas na sessão e voltam aos exemplos ao recarregar a página. Não há autenticação, backend, notificações ou sincronização. As durações são estimativas, não temporizadores.
 
